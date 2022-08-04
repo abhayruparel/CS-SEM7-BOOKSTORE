@@ -2,7 +2,6 @@
 
 more details and demo http://projectworlds.in/online-book-store-project-in-php/
 
-#for blocking sql injections and cross site scripting
-https://geekflare.com/static-site-security-tips/
 
-
+Doc file.
+https://docs.google.com/document/d/1ycnz4--ukx8F7IrZR7eqNDAcPn9hC2LPjgPcyspKLEM/edit?usp=sharing
