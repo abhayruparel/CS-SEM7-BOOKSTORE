@@ -8,3 +8,4 @@ https://docs.google.com/document/d/1ycnz4--ukx8F7IrZR7eqNDAcPn9hC2LPjgPcyspKLEM/
 
 #for sql injection and cross site scrpiting 
 https://geekflare.com/static-site-security-tips/
+https://www.phpcluster.com/aes-encryption-and-decryption-in-php/
