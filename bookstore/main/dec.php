@@ -10,7 +10,7 @@ function decrypt_data($data) {
     //Decrypt data 
     $decrypted_data = openssl_decrypt($encrypted_data, $cipher, $encryption_key, 0, $iv);
 
-    echo "Decrypted Text: " . $decrypted_data;
+    // echo "Decrypted Text: " . $decrypted_data;
     return $decrypted_data;
 }
  

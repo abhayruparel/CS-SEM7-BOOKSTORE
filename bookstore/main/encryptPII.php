@@ -18,7 +18,7 @@ function encrypt_data($plain_text)
    
     $encrypted_data = openssl_encrypt($data, $cipher, $encryption_key, 0, $iv);
 
-    echo "Encrypted Text: " . $encrypted_data;
+    // echo "Encrypted Text: " . $encrypted_data;
 
     return $encrypted_data;
 
