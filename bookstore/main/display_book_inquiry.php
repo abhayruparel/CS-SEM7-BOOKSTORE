@@ -54,6 +54,8 @@ include("header.php");
 <div id="page-wrapper">
             <!-- PHP CODE INTEGRATION display_counsellor_alloted.php-->
             <?php
+            include('dec.php');
+            error_reporting(0);
             $con = mysqli_connect("localhost", "root", "", "bookstore");
             if (mysqli_connect_errno()) {
                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -72,10 +74,14 @@ include("header.php");
 
             while ($row = mysqli_fetch_array($result)) {
                 echo "<tr>";
+                $name = decrypt_data($row['name']);
+                $mail = decrypt_data($row['mail']);
+                $number = decrypt_data($row['contact']);
+
                 echo "<td>" . $row['id'] . "</td>";
-                echo "<td>" . $row['name'] . "</td>";
-                echo "<td>" . $row['mail'] . "</td>";
-                echo "<td>" . $row['contact'] . "</td>";
+                echo "<td>" . $name . "</td>";
+                echo "<td>" . $mail . "</td>";
+                echo "<td>" . $number . "</td>";
                 echo "<td>" . $row['interested_field'] . "</td>";
                 echo "</tr>";
             }   
