@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli("localhost", "root", "", "admission_process");
+$mysqli = new mysqli("localhost", "root", "", "bookstore");
 
 if($mysqli === false){
     die("ERROR: Could not connect. " . $mysqli->connect_error);

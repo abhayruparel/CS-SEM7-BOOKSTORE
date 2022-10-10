@@ -1,6 +1,6 @@
 <?php
 include("header.php");
-$conn = mysqli_connect("localhost", "root", "", "admission_process");
+$conn = mysqli_connect("localhost", "root", "", "bookstore");
 ?>
 
 <br>

@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "admission_process";
+$db = "bookstore";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $db);
 
