@@ -67,7 +67,7 @@ include("header.php");
                         <th>Name</th>
                         <th>mail</th>
                         <th>Contact number</th>
-                        <th>Interested Field</th>
+                        <th>Inquiry</th>
                     </tr>";
 
             while ($row = mysqli_fetch_array($result)) {

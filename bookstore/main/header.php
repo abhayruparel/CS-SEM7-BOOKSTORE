@@ -109,23 +109,17 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                         <a href="index.php" class="waves-effect"><b>Dashbord</b></a>
                     </li>
                     <li class="active">
-                        <a href="display_counsellor_alloted.php" class="waves-effect"><b>Display counsellor alloted</b></a>
+                        <a href="display_admins.php" class="waves-effect"><b>Display Admin</b></a>
                     </li>
                     <li>
-                        <a href="display_students_enquiry.php" class="waves-effect"><b>Display Students inquiry</b></a>
+                        <a href="display_book_inquiry.php" class="waves-effect"><b>Display Book inquiry</b></a>
                     </li>
 
+                    
+                    
+                
                     <li>
-                        <a href="display_counsellor.php" class="waves-effect"><b>Display counsellor</b></a>
-                    </li>
-                    <li>
-                        <a href="display_studentQuries.php" class="waves-effect"><b>Student Quries</b></a>
-                    </li>
-                    <li>
-                        <a href="random_assign_couns.php" class="waves-effect"><b>Assign Counsellor To Students Randomly</b></a>
-                    </li>
-                    <li>
-                        <a href="panding_qry.php" class="waves-effect"><b>Pending Query</b></a>
+                        <a href="insert_admin.php" class="waves-effect"><b>Insert Admin</b></a>
                     </li>
                 </ul>
             </div>

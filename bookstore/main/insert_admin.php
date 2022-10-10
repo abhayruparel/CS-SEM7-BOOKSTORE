@@ -81,7 +81,7 @@ error_reporting(0);
             $enc_pass = $conn->real_escape_string($enc_pass);
             //$enc_fname = mysql_real_escape_string($enc_fname);
 
-            $sql = "INSERT INTO admin_details (id, admin_fname, admin_lname, admin_contact_no, admin_mail, admin_passwd, admin_photo) VALUES ('3', '$enc_fname', '$enc_lname', '$enc_number', '$enc_email', '$enc_pass', 'photo')";
+            $sql = "INSERT INTO admin_details (admin_fname, admin_lname, admin_contact_no, admin_mail, admin_passwd, admin_photo) VALUES ('$enc_fname', '$enc_lname', '$enc_number', '$enc_email', '$enc_pass', 'photo')";
 
             if (mysqli_query($conn, $sql)) {
                 echo "Record inserted successfully";
