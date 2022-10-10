@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2022 at 02:59 PM
+-- Generation Time: Oct 10, 2022 at 08:11 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `admission_process`
+-- Database: `bookstore`
 --
 
 -- --------------------------------------------------------
@@ -29,12 +29,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin_details` (
   `id` int(11) NOT NULL,
-  `admin_fname` varchar(30) NOT NULL,
-  `admin_lname` varchar(30) NOT NULL,
-  `admin_contact_no` varchar(20) NOT NULL,
-  `admin_mail` varchar(50) NOT NULL,
-  `admin_passwd` varchar(50) NOT NULL,
-  `admin_photo` varchar(255) NOT NULL
+  `admin_fname` text NOT NULL,
+  `admin_lname` text NOT NULL,
+  `admin_contact_no` text NOT NULL,
+  `admin_mail` text NOT NULL,
+  `admin_passwd` text NOT NULL,
+  `admin_photo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -42,8 +42,8 @@ CREATE TABLE `admin_details` (
 --
 
 INSERT INTO `admin_details` (`id`, `admin_fname`, `admin_lname`, `admin_contact_no`, `admin_mail`, `admin_passwd`, `admin_photo`) VALUES
-(1, 'Abhay', '', '', 'abhayruparel@gmail.com', '123456', ''),
-(3, 'PL8B1eqvDj1mMcJQLVciZw==', 'GhXFtPPUmhNFwr+WbJiAyg==', 'gPJ6CArdo+stswht7bvu', 'rNZEDUISdje0WFQVmbrrvG0OH+0p5RYGaLtK4dMivls=', '3TM28triSjE7h7K3warlKA==', 'photo');
+(7, 'MnVm9s5GOaqzUxSmYvBioQ==', 'MnVm9s5GOaqzUxSmYvBioQ==', 'mQqTygB8wW5g2rOK2wwWJg==', 'iiKCIfazIT8yNCLvNYqvDg==', 'kLDy36nqjjFhM2yNNPM2Xw==', 'photo'),
+(8, 'KN5rhD+2scjqADjBvweBlQ==', 'KN5rhD+2scjqADjBvweBlQ==', 'mQqTygB8wW5g2rOK2wwWJg==', 'chf6/Xpzf05YvkL1Ck7fMw==', 'kLDy36nqjjFhM2yNNPM2Xw==', 'photo');
 
 -- --------------------------------------------------------
 
@@ -147,14 +147,6 @@ CREATE TABLE `enquiry_data` (
   `interested_field` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `enquiry_data`
---
-
-INSERT INTO `enquiry_data` (`id`, `name`, `mail`, `contact`, `interested_field`) VALUES
-(1, 'Satvik Naik', 'sn@ict.in', '8866126679', 'B.TECH'),
-(2, 'Muskan', 'mn@ict.in', '0987654321', 'B.TECH');
-
 -- --------------------------------------------------------
 
 --
@@ -231,7 +223,7 @@ ALTER TABLE `signup_data`
 -- AUTO_INCREMENT for table `admin_details`
 --
 ALTER TABLE `admin_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `admission_data`
