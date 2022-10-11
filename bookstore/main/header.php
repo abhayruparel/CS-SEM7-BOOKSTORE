@@ -114,6 +114,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     <li>
                         <a href="display_book_inquiry.php" class="waves-effect"><b>Display Book inquiry</b></a>
                     </li>
+                    <li>
+                        <a href="insert_inquiry.php" class="waves-effect"><b>Inquiry</b></a>
+                    </li>
 
                     
                     
