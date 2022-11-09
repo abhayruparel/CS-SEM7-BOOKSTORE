@@ -68,20 +68,20 @@ error_reporting(0);
             $number = $_POST['number'];
             $password = $_POST['password'];
 
-            $enc_fname = encrypt_data($fname);
-            $enc_lname = encrypt_data($lname);
+            // $enc_fname = encrypt_data($fname);
+            // $enc_lname = encrypt_data($lname);
             $enc_email = encrypt_data($email);
             $enc_number = encrypt_data($number);
             $enc_pass = encrypt_data($password);
 
-            $enc_fname = $conn->real_escape_string($enc_fname);
-            $enc_lname = $conn->real_escape_string($enc_lname);
+            // $enc_fname = $conn->real_escape_string($enc_fname);
+            // $enc_lname = $conn->real_escape_string($enc_lname);
             $enc_email = $conn->real_escape_string($enc_email);
             $enc_number = $conn->real_escape_string($enc_number);
             $enc_pass = $conn->real_escape_string($enc_pass);
             //$enc_fname = mysql_real_escape_string($enc_fname);
 
-            $sql = "INSERT INTO admin_details (admin_fname, admin_lname, admin_contact_no, admin_mail, admin_passwd, admin_photo) VALUES ('$enc_fname', '$enc_lname', '$enc_number', '$enc_email', '$enc_pass', 'photo')";
+            $sql = "INSERT INTO admin_details (admin_fname, admin_lname, admin_contact_no, admin_mail, admin_passwd, admin_photo) VALUES ('$fname', '$lname', '$enc_number', '$enc_email', '$enc_pass', 'photo')";
 
             if (mysqli_query($conn, $sql)) {
                 echo "Record inserted successfully";

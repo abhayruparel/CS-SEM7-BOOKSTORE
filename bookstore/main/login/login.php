@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
 
             // Set parameters
-            $username = encrypt_data($username);
+            $username = $username;
             $password = encrypt_data($password);
             $param_username = $username;
             $param_password = $password;
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Store data in session variables
                     $_SESSION["loggedin"] = true;
                     $_SESSION["id"] = $id;
-                    $_SESSION["username"] = decrypt_data($username);
+                    $_SESSION["username"] = $username;
 
                     // Redirect user to welcome page
                     header("location: ../index.php");
@@ -135,9 +135,9 @@ mysqli_close($link);
             </div>
             <div class="form-group">
                 <input type="submit" name="submit" class="btn btn-primary" value="Login">
-                <!-- <a href="reset-password.php" class="btn btn-warning">forget password</a>-->
+                <!-- <a href="reset-password.php" class="btn btn-warning">forget password</a> -->
             </div>
-            <!--<b> <p>Don't have an account? <a href="register.php">Sign up now</a>.</p></b> -->
+            <b> <p>Don't have an account? <a href="register.php">Sign up now</a>.</p></b>
         </form>
     </div>
 </body>
