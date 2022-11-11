@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
 
             // Set parameters
-            $username = $username;
+            $username = encrypt_data($username);
             $password = encrypt_data($password);
             $param_username = $username;
             $param_password = $password;
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Store data in session variables
                     $_SESSION["loggedin"] = true;
                     $_SESSION["id"] = $id;
-                    $_SESSION["username"] = $username;
+                    $_SESSION["username"] = decrypt_data($username);
 
                     // Redirect user to welcome page
                     header("location: ../index.php");
