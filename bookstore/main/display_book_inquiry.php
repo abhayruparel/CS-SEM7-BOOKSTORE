@@ -82,7 +82,7 @@ include("header.php");
                 echo "<td>" . $name . "</td>";
                 echo "<td>" . $mail . "</td>";
                 echo "<td>" . $number . "</td>";
-                echo "<td>" . $row['interested_field'] . "</td>";
+                echo "<td>" . decrypt_data($row['interested_field']) . "</td>";
                 echo "</tr>";
             }   
             echo "</table>";
