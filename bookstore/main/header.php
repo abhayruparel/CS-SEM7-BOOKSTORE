@@ -108,9 +108,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     <li class="active">
                         <a href="index.php" class="waves-effect"><b>Dashbord</b></a>
                     </li>
-                    <li class="active">
+                    <!-- <li class="active">
                         <a href="display_admins.php" class="waves-effect"><b>Display Admin</b></a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="display_book_inquiry.php" class="waves-effect"><b>Display Book inquiry</b></a>
                     </li>
