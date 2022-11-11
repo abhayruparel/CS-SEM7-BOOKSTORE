@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST["password"]) && $_POST["password"] != "") {
 
         if (strlen($_POST["password"]) <= '8') {
-            $password_err .= "Your Password Must Contain At Least 8 Digits !" . "<br>";
+            $password_err .= "Your Password Must Contain At Least 8 Characters !" . "<br>";
         } elseif (!preg_match("#[0-9]+#", $_POST["password"])) {
             $password_err .= "Your Password Must Contain At Least 1 Number !" . "<br>";
         } elseif (!preg_match("#[A-Z]+#", $_POST["password"])) {
