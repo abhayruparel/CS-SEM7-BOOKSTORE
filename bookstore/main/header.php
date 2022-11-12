@@ -21,7 +21,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>Student</title>
+    <title>BOOKSTORE-ADMIN</title>
     <!-- Bootstrap Core CSS -->
     <link href="../assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Menu CSS -->
@@ -114,9 +114,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     <li>
                         <a href="display_book_inquiry.php" class="waves-effect"><b>Display Book inquiry</b></a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="insert_inquiry.php" class="waves-effect"><b>Inquiry</b></a>
-                    </li>
+                    </li> -->
 
                     
                     

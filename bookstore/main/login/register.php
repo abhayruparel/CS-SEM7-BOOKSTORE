@@ -5,7 +5,7 @@ include('..\\connect.php');
 include('..\\encryptPII.php');
 include('..\\dec.php');
 
-$username_err = $password_err = $confirm_password_err = $name_err = "";
+$username_err = $password_err = $confirm_password_err = $name_err = $number_err = "";
 
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,6 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name_err = "Please enter your last name.";
     } else {
         $lname = trim($_POST["lname"]);
+    }
+    if (empty(trim($_POST["number"]))) {
+        $number_err = "Please enter your number.";
+    } else {
+        $number = trim($_POST["number"]);
     }
 
     // Validate username
@@ -88,17 +93,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
 
         // Prepare an insert statement
-        $sql = "INSERT INTO admin_details(admin_fname, admin_lname, admin_mail, admin_passwd) VALUES(?,?,?,?)";
+        $sql = "INSERT INTO admin_details(admin_fname, admin_lname, admin_mail, admin_passwd, admin_contact_no) VALUES(?,?,?,?,?)";
 
         if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssss", $param_name, $param_lname, $param_username, $param_password);
+            mysqli_stmt_bind_param($stmt, "sssss", $param_name, $param_lname, $param_username, $param_password, $param_phone);
 
             // Set parameters
             $param_username = encrypt_data($username);
             $param_password = encrypt_data($password);
             $param_name = $name;
             $param_lname = $lname;
+            $param_phone = encrypt_data($number);
             //$param_password=password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
 
             // Attempt to execute the prepared statement
@@ -179,6 +185,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label>Confirm Password <span class="star">*</span></label>
                 <input type="password" name="confirm_password" class="form-control">
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
+            </div>
+            <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+                <label>Number: <span class="star">*</span></label>
+                <input type="text" name="number" class="form-control" pattern="[0-9]{10}">
+                <span class="help-block"><?php echo $number_err; ?></span>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">

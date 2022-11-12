@@ -32,7 +32,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $password = trim($_POST["password"]);
     }
+    
+if(isset($_POST["submit"])){
 
+        $usr = encrypt_data($_POST["username"]);
+        $pass = encrypt_data($_POST["password"]);
+        $sql1 = "SELECT admin_contact_no FROM admin_details WHERE admin_mail = '$usr' and admin_passwd= '$pass'";
+        $result = mysqli_query($link, $sql1);
+        $row = mysqli_fetch_assoc($result);
+        $num = $row['admin_contact_no'];
+        $dec_num = decrypt_data($num);
+}
     // Validate credentials
     if (empty($username_err) && empty($password_err)) {
         // Prepare a select statement
@@ -65,9 +75,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION["loggedin"] = true;
                     $_SESSION["id"] = $id;
                     $_SESSION["username"] = decrypt_data($username);
+                    $_SESSION["number"] = $dec_num;
 
                     // Redirect user to welcome page
-                    header("location: ../index.php");
+                    header("location: sendsms.php");
                 } else {
                     // Display an error message if password is not valid
                     $password_err = "The password or username you entered was not valid.";
